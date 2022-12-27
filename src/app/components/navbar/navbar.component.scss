@@ -1,0 +1,33 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+*{
+
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    // background-color: rgb(26,39,48);
+    
+    }
+    .active{
+        background:rgb(72, 162, 181);
+        border-radius: 6px;
+    }
+    
+nav
+{  
+    
+    position: relative;
+    
+    // background-image:  linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url(../../../assets/img/stars4.jpg);
+    // background-position: center;
+    // background-size: cover;
+    top: 230px;
+   
+}
+
+nav a
+{
+
+text-decoration: none;
+font-family: 'Yeseva One', cursive;
+}

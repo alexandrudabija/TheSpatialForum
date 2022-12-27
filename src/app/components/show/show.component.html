@@ -1,0 +1,82 @@
+<div class="mb-2 showTopics  container-fluid text-center  ">
+
+
+
+    <div  class="ngFor p-2 mt-4 text-light   container-fluid" *ngFor="let obj of this.arrayObj">
+        <hr class=" p-3">
+
+        <h2 *ngIf="obj.id!=this.verify" class="container-fluid font-weight-bold  mt-3"> {{obj.subjectValue}}</h2>
+        <p *ngIf="obj.id!=this.verify" class="container-fluid ">content : {{obj.subjectContent}}</p>
+        <h3 *ngIf="obj.id!=this.verify" class="container-fluid font-weight-bold"> User : {{obj.userName}}</h3>
+
+        <h3 *ngIf="obj.id!=this.verify" class="container-fluid "> Date : {{obj.subjectDate}}</h3>
+
+
+        <!-- form comments -->
+        <div *ngFor="let commentContent of obj.comment">
+
+            
+     <h4 *ngIf="obj.id!=this.verify" class="container-fluid text-danger font-weight-bold"> User:
+                    {{commentContent.userName}}</h4>
+                    
+            <h4 *ngIf="obj.id!=this.verify" class="container-fluid text-info font-weight-bold"> Comment :
+                {{commentContent.commentContent}}</h4>
+            <!-- <app-cancel-comment [Objcomment]="obj.comment"  ></app-cancel-comment> -->
+            <h3 *ngIf="obj.id!=this.verify" class="container-fluid text-muted font-weight-bold"> Comment Date :
+                {{commentContent.subjectDate}}</h3>
+
+
+           
+
+        </div>
+
+
+
+        <!-- for update ! -->
+        <div *ngIf="obj.id==this.verify" class=" container-fluid  update  ">
+            <form [formGroup]="productForm" (submit)="updatePost(obj)" class="
+    mt-3 p-2 d-flex justify-content-center align-items-center  container-fluid flex-column">
+
+                <input [formControlName]="'subjectValue'" class="w-50 m-4  text-center  " type="text"
+                    placeholder="{{obj.subjectValue}}" value="{{obj.subjectValue}}">
+
+
+                <input [formControlName]="'userName'" class="w-50 m-4  text-center  " type="text"
+                    placeholder="{{obj.userName}}" value="{{obj.userName}}">
+
+
+                <textarea class="w-50  text-center " placeholder="{{obj.subjectContent}}" value="{{obj.subjectContent}}"
+                    [formControlName]="'subjectContent'"></textarea>
+
+
+
+
+
+
+                <button [disabled]="!productForm.valid" type="submit" class="w-25 btn btn-danger m-4">Update</button>
+                <button class="btn btn-outline-warning" (click)="editPost(000)">Cancel </button>
+
+            </form>
+
+
+
+        </div>
+        <div class="buttons"  *ngIf=" obj.id_user===this.id_userVerify ">
+            <button class="btn btn-outline-success" *ngIf="update && obj.id!=this.verify "
+                (click)="editPost(obj.id)">Edit</button>
+            <!-- delete ! -->
+            <button class="btn btn-outline-primary" *ngIf="delete " (click)="deletePost(obj)">Delete</button>
+        </div>
+
+        <!-- for comments -->
+        <app-add-comment *ngIf="!update && !delete" [Obj]="obj"> </app-add-comment>
+
+
+        <hr class=" p-3">
+    </div>
+
+</div>
+
+<!-- <app-subject *ngFor="let objs of this.obj"> 
+    
+</app-subject> -->

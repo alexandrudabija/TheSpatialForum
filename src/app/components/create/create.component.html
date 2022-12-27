@@ -1,0 +1,36 @@
+<div class="main create container-fluid  ">
+
+  <div class="create container-fluid  w-75 mt-3  ">
+    <form [formGroup]="productForm" (submit)="addProduct()"
+      class="text-light form-control  mt-3 p-2 d-flex justify-content-center align-items-center  container-fluid flex-column">
+
+      <input formControlName="subjectValue" name="subjectValue" 
+       class="w-50 m-4  text-center text-light " type="text"
+        placeholder="Insert Subjects" maxlength="60" required >
+
+
+
+      <input formControlName="userName"
+       class="w-50 m-4  text-center text-light   "
+        type="text" placeholder="Your Name" max="30" required >
+
+
+      <textarea class="w-50  text-center text-light   " placeholder="content"
+        formControlName="subjectContent" maxlength="400" required ></textarea>
+
+
+
+
+
+
+        <button type="submit" [disabled]="!productForm.valid" class="w-25 btn btn-danger m-4">Create</button>
+
+
+    </form>
+
+
+  </div>
+
+
+</div>
+<app-show></app-show>

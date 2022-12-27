@@ -1,0 +1,13 @@
+
+<form [formGroup]="commentForm" class="d-flex  flex-column w-25" >
+
+<input placeholder="comment"  class="text-center" [formControlName]="'commentContent'" type="text"> 
+
+<input   placeholder="username"  class="text-center"  [formControlName]="'userName'" type="text"> 
+<button [disabled]="!commentForm.valid" (click)="addComment(this.Obj)" 
+class="btn btn-outline-success">Add Comment </button>
+<!-- <button  (click)="UpdateComment(this.Obj)" 
+class="btn btn-outline-primary">Update comment</button>
+<button  (click)="cancelComment(this.Obj)" 
+class="btn btn-outline-danger">Cancel comment</button> -->
+</form>

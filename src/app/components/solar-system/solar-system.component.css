@@ -1,0 +1,762 @@
+
+*{
+    /* // background-color: black; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-image: url(../../../assets/img/stars.jpg);
+    background-position: center;
+    background-size: cover; */
+    }
+    
+    
+    .main
+    {
+   
+    top: 0;
+    bottom: 0;
+    
+    }
+    
+    .solar
+    {
+    
+    position: relative;
+    /* // top and bootom margins 0 */
+    /* // left and right margins are auto */
+    margin: 0 auto;
+    display: block;
+    
+    /* // Proprietatea perspectivedefinește cât de departe este obiectul de utilizator. Deci, o valoare mai mică va avea ca rezultat un efect 3D mai intens decât o valoare mai mare. */
+    perspective: 1150px;
+    /* // Proprietatea perspective-origindefinește în ce poziție se uită utilizatorul la elementul poziționat 3D. */
+    
+    /* // Atunci când definiți perspective-originproprietatea unui element, elementele CHILD vor obține efectul, NU elementul în sine. */
+    perspective-origin: 40% 50%;
+    
+    top:40px;
+    transform: rotate(1);
+    
+    }
+    .solar > div 
+    {
+    position: relative;
+    margin: 0 auto;
+    transform-style :preserve-3d;
+    height: 0;
+    
+    }
+    
+    
+    .sun{
+    width: 250px;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    height:  125px !important;
+background: transparent;
+    }
+    
+    
+    .sun .star 
+    {
+    width: 250px;
+    height: 250px;
+    background: url(../../../assets/img/sun.png);
+    background-size: cover;
+    border-radius: 250px;
+    margin: 0 auto;
+    animation :spinsun 40s infinite linear;
+    
+    }
+    
+    
+    .planet
+    {
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    animation-iteration-count:infinite ;
+    overflow: hidden;
+    
+    cursor: pointer;
+    }
+    
+
+    /* .planet:hover
+    {
+
+background-color: rgb(12, 10, 10) ;
+border-radius: 20px;
+z-index: 1;
+
+    } */
+
+    /* for planet */
+    .shadow
+    {
+    position: absolute;
+    top: 0;
+    left:0;
+    right:0;
+    bottom:0;
+    background: transparent url(../../../assets/img/shadow.png) 0% 0%  no-repeat;
+    background-size: cover;
+    border-radius: 100%;
+    
+    }
+    
+    
+    .murcury
+    {
+    position: absolute;
+    width: 400px;
+    z-index: 2;
+    animation: orbitmurcury 12s infinite linear;
+    top: -7.5px;
+    
+    }
+    
+    .murcury .planet
+    {
+    width: 15px;
+    height: 15px;
+    background-image: url(../../../assets/img/mercury.png);
+    animation: anti-spin 12s infinite linear;
+    
+    }
+    
+    
+    .murcury .shadow
+    {
+    animation: shadow 12s infinite linear;
+    
+    
+    }
+    
+    .venus
+    {
+    
+    position: absolute;
+    
+    width: 506px;
+    z-index: 3;
+    animation: orbitvenus 13s infinite linear;
+    top:-19px;
+    
+    
+    }
+    
+    
+    .venus .planet
+    {
+    width: 35px;
+    height: 35px;
+    background-image: url(../../../assets/img/venus.png);
+    
+    animation: anti-spin 13s infinite linear;
+    }
+    
+    .venus .shadow
+    
+    {
+    
+    animation: shadow 13s infinite linear;
+    
+    }
+    
+    .earth
+    {
+    
+    position: absolute;
+    width: 610px;
+    z-index: 4;
+    animation: orbitearth 15s infinite linear ;
+    top:-20px;
+    
+    }
+    
+    .earth .planet
+    {
+    
+    width: 40px;
+    height: 40px;
+    
+    background-image: url(../../../assets/img/earth.png);
+    animation: anti-spin 15s infinite linear;
+    
+    }
+    
+    
+    .earth .shadow
+    {
+    
+    
+    animation: shadow 15s infinite linear;
+    
+    
+    
+    }
+    
+    
+    .mars
+    {
+    position: absolute;
+    width: 706px;
+    z-index: 5;
+    animation: orbitmars 25s infinite linear;
+    top:-11px;
+    
+    
+    }
+    
+    .mars .planet
+    {
+    
+    width: 24px;
+    height: 24px;
+    background-image: url(../../../assets/img/mars.png);
+    animation: anti-spin 25s infinite linear;
+    }
+    
+    
+    .mars .shadow 
+    {
+    
+    animation: shadow 25s infinite linear;
+    
+    }
+    
+    .jupiter 
+    {
+    
+    position: absolute;
+    width: 800px;
+    z-index: 6;
+    animation: orbitjupiter 28s infinite linear;
+    top :-44px;
+    
+    }
+    
+    .jupiter .planet
+    {
+    
+    width: 124px;
+    height: 124px;
+    background-image: url(../../../assets/img/jupiter.png);
+    animation: anti-spin 28s infinite linear;
+    }
+    
+    .jupiter .shadow 
+    {
+    animation: shadow 28s infinite linear;
+    
+    }
+
+
+
+    
+    .saturn 
+    {
+    
+    position: absolute;
+    width: 1000px;
+    z-index: 7;
+    animation: orbitsaturn 39s infinite linear;
+    top :-24px;
+    
+    }
+    
+    .saturn .planet
+    {
+    
+    width: 90px;
+    height: 90px;
+    background-image: url(../../../assets/img/saturn.png);
+    animation: anti-spin 39s  infinite linear;
+    }
+    
+    .saturn .shadow 
+    {
+    animation: shadow 39s  infinite   linear;
+    
+    }
+
+
+
+
+    .uranus 
+    {
+    
+    position: absolute;
+    width: 1100px;
+    z-index: 8;
+    animation: orbituranus 60s infinite linear;
+    top :-24px;
+    
+    }
+    
+    .uranus .planet
+    {
+    
+    width: 50px;
+    height: 50px;
+    background-image: url(../../../assets/img/uranus.jpg);
+    animation: anti-spin 60s infinite linear;
+    
+    }
+    
+    .uranus .shadow 
+    {
+    animation: shadow 60s infinite   linear;
+    
+    }
+    
+    .neptuno 
+    {
+    
+    position: absolute;
+    width: 1200px;
+    z-index: 8;
+    animation: orbitneptuno 70s infinite linear;
+    top :-24px;
+    
+    }
+    
+    .neptuno .planet
+    {
+    
+    width: 50px;
+    height: 50px;
+    background-image: url(../../../assets/img/neptuno.jpg);
+    animation: anti-spin 70s infinite linear;
+    }
+    
+    .neptuno .shadow 
+    {
+    animation: shadow 70s infinite   linear;
+    
+    }
+
+
+
+
+
+
+
+
+
+    @keyframes spinsun
+    {
+    0%{
+        transform: rotate(0);
+    
+    
+    }
+    100%{
+    
+        transform: rotate(-360deg);
+    }
+    }
+    
+    
+    @keyframes shadow
+    {
+    
+    0%{
+
+        background-position: 130% 0%;
+    
+    
+    }
+    
+    
+    33%{
+    
+        background-position: 50% 0%;
+    }
+    55%{
+    
+        background-position: 0% 0%;
+    }
+    
+    80%{
+    
+        background-position: -50% 0%;
+    }
+    
+    100%{
+    
+        background-position: -50% 0%;
+    }
+
+
+
+    
+    
+   
+    
+    }
+    
+
+
+    @keyframes shadow2
+    {
+    
+    0%{
+
+        background-position: 130% 0%;
+    
+    
+    }
+    
+    
+    38%{
+    
+        background-position: 50% 0%;
+    }
+    55%{
+    
+        background-position: 0% 0%;
+    }
+    
+    80%{
+    
+        background-position: -50% 0%;
+    }
+    
+    100%{
+    
+        background-position: -50% 0%;
+    }
+
+
+
+    
+    
+   
+    
+    }
+
+
+
+    
+    
+
+
+
+
+    
+    
+    @keyframes orbitmurcury
+    {
+    0%{
+    
+    z-index: 2;
+    transform: rotate(0);
+    
+    }
+    
+    49%{
+    
+        z-index: 2;
+    }
+    50%{
+    
+        z-index: -2;
+    }
+    99%{
+    
+        z-index: -2;
+    }
+    100%{
+    
+        z-index: 2;
+        transform: rotateY(360deg);
+    }
+    
+    
+    }
+    
+    
+    
+    @keyframes orbitvenus
+    {
+    0%{
+    
+    z-index: 3;
+    transform: rotate(0);
+    
+    }
+    
+    49%{
+    
+        z-index: 3;
+    }
+    50%{
+    
+        z-index: -3;
+    }
+    99%{
+    
+        z-index: -3;
+    }
+    100%{
+    
+        z-index: 3;
+        transform: rotateY(360deg);
+    }
+    
+    
+    }
+    
+    
+    
+    @keyframes orbitearth
+    {
+    0%{
+    
+    z-index: 4;
+    transform: rotate(0);
+    
+    }
+    
+    49%{
+    
+        z-index: 4;
+    }
+    50%{
+    
+        z-index: -4;
+    }
+    99%{
+    
+        z-index: -4;
+    }
+    100%{
+    
+        z-index: 4;
+        transform: rotateY(360deg);
+    }
+    
+    
+    }
+    
+    
+
+
+    
+    @keyframes orbitmars
+    {
+    0%{
+    
+    z-index: 5;
+    transform: rotate(0);
+    
+    }
+    
+    49%{
+    
+        z-index: 5;
+    }
+    50%{
+    
+        z-index: -5;
+    }
+    99%{
+    
+        z-index: -5;
+    }
+    100%{
+    
+        z-index: 5;
+        transform: rotateY(360deg);
+    }
+    
+    
+    }
+    
+    
+    
+    
+    
+    @keyframes orbitjupiter
+    {
+    0%{
+    
+    z-index: 6;
+    transform: rotate(0);
+    
+    }
+    
+    49%{
+    
+        z-index: 6;
+    }
+    50%{
+    
+        z-index:-6;
+    }
+    99%{
+    
+        z-index:-6;
+    }
+    100%{
+    
+        z-index:  6;
+        transform: rotateY(360deg);
+    }
+    
+    
+    }
+
+
+
+    @keyframes orbitjupiter1
+    {
+    0%{
+    
+    z-index: 7;
+    transform: rotate(0);
+    
+    }
+    
+    49%{
+    
+        z-index: 7;
+    }
+    50%{
+    
+        z-index: -7;
+    }
+    99%{
+    
+        z-index:-7;
+    }
+    100%{
+    
+        z-index:  7;
+        transform: rotateY(360deg);
+    }
+    
+    
+    }
+    
+    
+
+
+
+
+
+    @keyframes orbitsaturn
+    {
+    0%{
+    
+    z-index: 7;
+    transform: rotate(0);
+    
+    }
+    
+    49%{
+    
+        z-index: 7;
+    }
+    70%{
+    
+        z-index: -7;
+    }
+    99%{
+    
+        z-index:-7;
+    }
+    100%{
+    
+        z-index:  7;
+        transform: rotateY(360deg);
+    }
+
+
+    
+    }
+
+    @keyframes orbituranus
+    {
+    0%{
+    
+    z-index: 7;
+    transform: rotate(0);
+    
+    }
+    
+    49%{
+    
+        z-index: 7;
+    }
+    70%{
+    
+        z-index: -7;
+    }
+    99%{
+    
+        z-index:-7;
+    }
+    100%{
+    
+        z-index:  7;
+        transform: rotateY(360deg);
+    }
+
+
+    
+    }
+    
+    
+    @keyframes orbitneptuno
+    {
+    0%{
+    
+    z-index: 8;
+    transform: rotate(0);
+    
+    }
+    
+    49%{
+    
+        z-index: 8;
+    }
+    70%{
+    
+        z-index: -8;
+    }
+    99%{
+    
+        z-index:-8;
+    }
+    100%{
+    
+        z-index:  8;
+        transform: rotateY(360deg);
+    }
+
+
+    
+    }
+
+
+    @keyframes anti-spin{
+        form{
+          transform: rotateY(0);
+        }
+        to{
+          transform: rotateY(-360deg);
+        }
+      }
+      @keyframes anti-spin-rings{
+        form{
+          transform: rotateY(0) rotateX(73deg);
+        }
+        to{
+          transform: rotateY(-360deg) rotateX(73deg);
+        }
+      }
